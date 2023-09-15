@@ -15,7 +15,12 @@ from tensorflow.python.ops.custom_gradient import _graph_mode_decorator
 is_tf_keras = strtobool(os.environ.get('TF_KERAS', '0'))
 
 if is_tf_keras:
-    sys.modules['keras'] = tf.keras
+    # sys.modules['keras'] = tf.keras
+    from tensorflow import keras
+    import tensorflow.keras.backend as K
+else:
+    import keras
+    import keras.backend as K
 
 import keras
 import keras.backend as K
