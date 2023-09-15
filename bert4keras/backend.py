@@ -22,9 +22,6 @@ else:
     import keras
     import keras.backend as K
 
-import keras
-import keras.backend as K
-
 # 判断是否启用重计算（通过时间换空间）
 do_recompute = strtobool(os.environ.get('RECOMPUTE', '0'))
 
